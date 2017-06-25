@@ -5,6 +5,8 @@ Created on Sat Jun 24 22:43:23 2017
 @author: pwu2
 """
 
+<p>This is a paragraph.</p>
+
 class Codec:
 
     
@@ -45,7 +47,3 @@ class Codec:
         return self.hashToUrl.get(shortUrl[len(self.urlBase):])
         
         
-
-# Your Codec object will be instantiated and called as such:
-# codec = Codec()
-# codec.decode(codec.encode(url))
