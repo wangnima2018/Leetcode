@@ -17,6 +17,7 @@ Created on Sat Jun 24 22:43:23 2017
 <p>建立urlbase，并正确使用<p>
 
 
+```python
 class Codec:
 
     
@@ -55,5 +56,4 @@ class Codec:
         :rtype: str
         """
         return self.hashToUrl.get(shortUrl[len(self.urlBase):])
-        
-        
+```
