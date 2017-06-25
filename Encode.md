@@ -4,9 +4,8 @@ Created on Sat Jun 24 22:43:23 2017
 
 @author: pwu2
 """
-
-First leetcode file upload.
-本题涉及到一个常见的实际问题
+<h1>题意</h1>
+<p>把一个长url转为一个短url，同时要求可以把短url解码回长的url<p> 
 
 class Codec:
 
