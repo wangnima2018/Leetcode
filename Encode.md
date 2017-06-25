@@ -7,6 +7,10 @@ Created on Sat Jun 24 22:43:23 2017
 <h1>题意</h1>
 <p>把一个长url转为一个短url，同时要求可以把短url解码回长的url<p> 
 
+<h2>题解</h2>
+<p>把所有字母和数字放在一个string集合里，用生成的随机数，抽取6次char，然后生成一个短string。
+如果string不在之前生成过的string set里，那么就使用这个string<p> 
+
 class Codec:
 
     
