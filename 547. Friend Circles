@@ -40,6 +40,5 @@ class Solution(object):
         for j in range(len(visited)):
             if M[i][j] == 1 and i != j:
                 if visited[j] == 0:
-                    self.helper(M,j,visited)         
-                        
+                    self.helper(M,j,visited)              
 ```
