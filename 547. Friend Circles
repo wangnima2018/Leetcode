@@ -1,0 +1,45 @@
+
+
+<h3>题意<h3>
+<p>已知二维数组，如果i行j列为1，就表示第i个人和第j个人，是朋友。如果a与b是朋友，b与c是朋友，那么a,b,c共属于一个朋友圈（以此类推）。
+需要从二维数组中，找到一共有多少个朋友圈（有的朋友圈，是相互独立的）。<p>
+
+<h3>解题<h3>
+<p>使用一个一维数组 visited = [0] * length，记录那些人是被访问过的，被访问过，说明他已经完全找到的他所属于的朋友圈。
+寻找过程使用循环递归法，如果一个人未被visit，那么需要遍历他所在的那行，找到他所有的朋友，比如朋友B，朋友C，分别用DFS遍历B,再遍历C，这样就可以一次性，
+标记出所有属于朋友圈的人<p>
+
+<h3>细节<h3>
+<p>注意自己和自己是朋友，相关度是1，但是可以忽略<p>
+
+
+
+```python
+class Solution(object):
+    def findCircleNum(self, M):
+        """
+        :type M: List[List[int]]
+        :rtype: int
+        """
+        length = len(M)
+        visited = [0] * length
+        count = 0
+        
+        for i in range(length):
+            if visited[i] == 1:
+                continue
+            else:
+                self.helper(M,i,visited)
+                count += 1
+        
+        return count
+
+
+    def helper(self,M,i,visited):
+        visited[i] = 1
+        for j in range(len(visited)):
+            if M[i][j] == 1 and i != j:
+                if visited[j] == 0:
+                    self.helper(M,j,visited)         
+                        
+```
