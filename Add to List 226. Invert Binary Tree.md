@@ -8,7 +8,7 @@
 
 
 
-'''python
+```python
 # Definition for a binary tree node.
 # class TreeNode(object):
 #     def __init__(self, x):
@@ -33,4 +33,4 @@ class Solution(object):
             root.right = left
             self.helper(root.left)
             self.helper(root.right)
- '''
+ ```
