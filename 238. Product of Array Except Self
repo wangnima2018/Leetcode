@@ -1,0 +1,42 @@
+
+
+
+<h3>题意<h3>
+<p>给一list，计算乘机，除了当前的数字<p>
+
+<h3>解题<h3>
+<p>解题方法之一，是通过计算中间量，左乘机数组，右乘机数组，然后使用他们计算最终结果【类推，有一类题目，可以考虑用这种方法去解(先计算中间量，
+然后使用得出最终答案)】<p>
+
+
+
+<h3>注意<h3>
+<p>本题看似可以先求product,然后用product除以每个element，得出想要的值。问题是，一个0，或者多个0，怎么处理。相比之下，还是求中间量比较straight forward<p>
+
+
+```python
+class Solution(object):
+    def productExceptSelf(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        length = len(nums)
+        left = [0] * length
+        right = [0] * length
+        res = [0] * length
+        
+        left[0] = 1
+        right[length-1] = 1
+        
+        for i in range(1,length):
+            left[i] = left[i-1] * nums[i-1]
+        
+        for i in range(length-2,-1,-1):
+            right[i] = right[i+1] * nums[i+1]
+            
+        for i in range(length):
+            res[i] = left[i] * right[i]
+        
+        return res
+```
